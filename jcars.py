@@ -31,7 +31,7 @@ def get_list(count):
 					r = requests.post("http://ecms.jappclassifieds.com/pushservice.asmx/Insert_Phoneno", data={'phoneno':n,'domainname':'http://www.jacars.net/'})
 					print(r.status_code, r.reason)
 		elif len(n) >= 12:
-			print (n[inital],"inside is valid")			
+			print ("inside is not valid")			
 
 
 
