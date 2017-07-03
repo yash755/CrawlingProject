@@ -20,10 +20,10 @@ def get_list(count):
 
 
 if __name__ == '__main__':
-	# count = 0
-	# while (count < 300):
-	# 		get_list(count)
-	# 		count = count + 1
+	count = 0
+	while (count < 300):
+			get_list(count)
+			count = count + 1
 
 	file = open("autoadsja_url.txt","r")
 	i=0

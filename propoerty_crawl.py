@@ -23,9 +23,9 @@ def get_list(count):
 
 if __name__ == '__main__':
 	count = 0
-	# while (count < 110):
-	# 		get_list(count)
-	# 		count = count + 1
+	while (count < 110):
+			get_list(count)
+			count = count + 1
 
 	file = open("property_url.txt","r")
 	i=0
