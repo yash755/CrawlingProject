@@ -8,25 +8,8 @@ def get_list(count):
 	response = requests.get(url)
 	html = BeautifulSoup(response.content, 'html.parser')
 	rows = html.find_all('div',{'class':'card-image'})
-	file = open("jamiace_classified_url.txt","a+")
 	for row in rows:
 		k = row.find('a')['href']
-		file.write(k)
-		file.write("\n")
-	file.close()
-
-
-if __name__ == '__main__':
-	count = 0
-	while (count < 501):
-			get_list(count)
-			count = count + 1
-			print (count)
-
-	file = open("jamiace_classified_url.txt","r")
-	i=0
-	for f in file:
-		k = f
 		response = requests.get(k)
 		html = BeautifulSoup(response.content, 'html.parser')
 		# try:
@@ -46,13 +29,13 @@ if __name__ == '__main__':
 							if len(n) == 11:
 								print (n,"is valid")
 								r = requests.post("http://ecms.jappclassifieds.com/pushservice.asmx/Insert_Phoneno", data={'phoneno':n,'domainname':'http://jamaicaclassifiedonline.com/'})
-								print(r.status_code, r.reason,i)
+								print(r.status_code, r.reason)
 							else:
 								print (n,"is not valid")
 					else:
 						print(n,"is valid")
 						r = requests.post("http://ecms.jappclassifieds.com/pushservice.asmx/Insert_Phoneno", data={'phoneno':n,'domainname':'http://jamaicaclassifiedonline.com/'})
-						print(r.status_code, r.reason,i)
+						print(r.status_code, r.reason)
 			elif len(n) >= 12:
 				n = n.split(' ')
 				inital = 0
@@ -62,7 +45,17 @@ if __name__ == '__main__':
 								print (n[inital],"inside is not valid")
 							else:
 								r = requests.post("http://ecms.jappclassifieds.com/pushservice.asmx/Insert_Phoneno", data={'phoneno':n[inital],'domainname':'http://jamaicaclassifiedonline.com/'})
-								print(r.status_code, r.reason,i)
+								print(r.status_code, r.reason)
 								print (n[inital],"inside is valid")
 						inital = inital +1	
-			i = i+1
+
+
+
+if __name__ == '__main__':
+	count = 0
+	while (count < 150):
+			get_list(count)
+			count = count + 1
+
+
+		
