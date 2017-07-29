@@ -49,11 +49,9 @@ def get_list(count):
 											print (n[inital],"inside is not valid")
 										else:
 											r = requests.post("http://ecms.jappclassifieds.com/pushservice.asmx/Insert_Phoneno", data={'phoneno':n[inital],'domainname':'http://www.propertyadsja.com/'})
-											print(r.status_code, r.reason,i)
+											print(r.status_code, r.reason)
 											print (n[inital],"inside is valid")
 									inital = inital +1
-						# r = requests.post("http://ecms.jappclassifieds.com/pushservice.asmx/Insert_Phoneno", data={'phoneno':str(m[1]),'domainname':m})
-						# print(r.status_code, r.reason,i)
 						
 					except IndexError:
 						print ("Not insterted")
