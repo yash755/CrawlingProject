@@ -28,7 +28,6 @@ def get_list(count):
 					time.sleep(5)
 					driver.find_element_by_class_name('adverts-icon-down-open').click();
 					time.sleep(5)
-					driver.save_screenshot('ame.png')
 					html2 = driver.page_source
 					soup = BeautifulSoup(html2, "lxml", from_encoding="utf-8")
 					rows = soup.find_all('a')
